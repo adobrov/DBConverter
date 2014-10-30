@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25b6e0eb-2d6f-4fa9-8f37-7ce13320ef6c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/migrator.py" afterPath="$PROJECT_DIR$/migrator.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visitors/visit_from_postres_types.py" afterPath="$PROJECT_DIR$/visitors/visit_from_postres_types.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DBConverter.iws" />
@@ -26,12 +26,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="migrator.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="migrator.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/migrator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="58" selection-start="766" selection-end="766" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="2176">
+            <state line="112" column="70" selection-start="4564" selection-end="4630" vertical-scroll-proportion="0.0" vertical-offset="995" max-vertical-offset="2176">
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
+                <marker date="1414692930506" expanded="true" signature="855:929" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="visit_from_postres_types.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/visitors/visit_from_postres_types.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="0" selection-start="291" selection-end="291" vertical-scroll-proportion="0.11657143" vertical-offset="0" max-vertical-offset="875">
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,10 +73,10 @@
         <option value="$PROJECT_DIR$/visitors/visit_blob_to_oid.py" />
         <option value="$PROJECT_DIR$/utils/mapper_type_functions.py" />
         <option value="$PROJECT_DIR$/utils/processors.py" />
-        <option value="$PROJECT_DIR$/visitors/visit_from_postres_types.py" />
         <option value="$PROJECT_DIR$/visitors/visit_from_oracle_types.py" />
         <option value="$PROJECT_DIR$/utils/postgres_blob_manager.py" />
         <option value="$PROJECT_DIR$/migrator.py" />
+        <option value="$PROJECT_DIR$/visitors/visit_from_postres_types.py" />
       </list>
     </option>
   </component>
@@ -354,7 +366,11 @@
       <created>1414692882014</created>
       <updated>1414692882014</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Remove trash">
+      <created>1414692942440</created>
+      <updated>1414692942440</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -400,6 +416,7 @@
         <state line="101" column="43" selection-start="4288" selection-end="4288" vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="2261">
           <folding>
             <element signature="e#0#31#0" expanded="true" />
+            <marker date="1414692930506" expanded="true" signature="855:929" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -409,15 +426,26 @@
         <state line="101" column="43" selection-start="4288" selection-end="4288" vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="2261">
           <folding>
             <element signature="e#0#31#0" expanded="true" />
+            <marker date="1414692930506" expanded="true" signature="855:929" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/migrator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="58" selection-start="766" selection-end="766" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="2176">
+        <state line="112" column="70" selection-start="4564" selection-end="4630" vertical-scroll-proportion="0.0" vertical-offset="995" max-vertical-offset="2176">
           <folding>
             <element signature="e#0#31#0" expanded="true" />
+            <marker date="1414692930506" expanded="true" signature="855:929" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/visitors/visit_from_postres_types.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="291" selection-end="291" vertical-scroll-proportion="0.11657143" vertical-offset="0" max-vertical-offset="875">
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
