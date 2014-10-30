@@ -16,7 +16,7 @@ class DBAdapter:
         self.dst_engine = dst_engine
         self.dst_inspector = Inspector.from_engine(dst_engine)
         self.src_metadata = MetaData(bind=self.src_engine, reflect=True)
-        self.dst_metadata = MetaData(bind=self.dst_engine)
+        self.dst_metadata = MetaData(bind=self.dst_engine, reflect=True)
         self.tables_for_copy = self.src_metadata.tables
 
     def make_create(self, tbl):
@@ -110,12 +110,12 @@ class Migrator:
         self.migrator.start(batch_size)
 
 if __name__ == '__main__':
-    dst = create_engine('engine://login:password@address:port/dbname')
-    src = create_engine('engine://login:password@address:port/dbname')
+    #dst = create_engine('engine://login:password@address:port/dbname')
+    #src = create_engine('engine://login:password@address:port/dbname')
     adapter = DBAdapter(src, dst)
     migrator = Migrator(adapter)
     print migrator.migration_type
-    migrator.migrate(1)
+    migrator.migrate(100)
 
 
 

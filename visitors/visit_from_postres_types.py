@@ -13,8 +13,8 @@ def visit_from_postgres_types(element, compiler, **kw):
     elif isinstance(column.type, TEXT):
         return '%s CLOB' % column.name
     elif isinstance(column.type, BOOLEAN):
-        return '%s INTEGER(1,0)' % column.name
+        return '%s INTEGER' % column.name
     elif isinstance(column.type, BIGINT):
-        return '%s INTEGER(19,0)' % column.name
+        return '%s INTEGER' % column.name
     else:
         return compiler.visit_create_column(element, **kw)
