@@ -41,7 +41,7 @@
       <file leaf-file-name="visit_from_postres_types.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/visitors/visit_from_postres_types.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="0" selection-start="291" selection-end="291" vertical-scroll-proportion="0.11657143" vertical-offset="0" max-vertical-offset="875">
+            <state line="17" column="26" selection-start="721" selection-end="721" vertical-scroll-proportion="0.33028573" vertical-offset="0" max-vertical-offset="875">
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -370,7 +370,11 @@
       <created>1414692942440</created>
       <updated>1414692942440</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fix types">
+      <created>1414696529285</created>
+      <updated>1414696529285</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -405,7 +409,8 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="Remove trash" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove trash" />
+    <MESSAGE value="fix types" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix types" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -443,7 +448,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/visitors/visit_from_postres_types.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="291" selection-end="291" vertical-scroll-proportion="0.11657143" vertical-offset="0" max-vertical-offset="875">
+        <state line="17" column="26" selection-start="721" selection-end="721" vertical-scroll-proportion="0.33028573" vertical-offset="0" max-vertical-offset="875">
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
