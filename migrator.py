@@ -112,6 +112,9 @@ class Migrator:
 if __name__ == '__main__':
     #dst = create_engine('engine://login:password@address:port/dbname')
     #src = create_engine('engine://login:password@address:port/dbname')
+    #dst = create_engine('oracle://naucrm2:naucrm@192.168.211.126:1521/naumendb')
+    dst = create_engine('oracle://naucrm2:naucrm@192.168.211.126:1521/naumendb')
+    src = create_engine('postgresql+psycopg2://naucrm:naucrm@localhost:5432/naumendb2')
     adapter = DBAdapter(src, dst)
     migrator = Migrator(adapter)
     print migrator.migration_type
