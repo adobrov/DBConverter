@@ -112,16 +112,13 @@ class Migrator:
         self.migrator.start(batch_size)
 
 if __name__ == '__main__':
-    import time
-    t = time.time()
-    #src = create_engine('postgresql+psycopg2://naucrm:naucrm@localhost:5432/naumendb', echo=True)
-    dst = create_engine('oracle://naucrm3:naucrm@192.168.211.189:1521/naumendb')
-    src = create_engine('postgresql+psycopg2://naucrm:naucrm@localhost/naumendb2')
+    dst = create_engine('engine://login:password@address:port/dbname')
+    src = create_engine('engine://login:password@address:port/dbname')
     adapter = DBAdapter(src, dst)
     migrator = Migrator(adapter)
     print migrator.migration_type
     migrator.migrate(1)
-    print time.time()-t
+
 
 
 
