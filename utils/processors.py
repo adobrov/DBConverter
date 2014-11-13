@@ -1,3 +1,9 @@
+def encode_unicode(value):
+    if isinstance(value, unicode):
+        return value.encode('utf-8')
+    return value
+
+
 class BaseRowProcessor:
     def __init__(self, table, func_type_map):
         self.func_type_map = func_type_map
@@ -55,7 +61,7 @@ class PostSelectDataProcessor(BaseRowProcessor):
             next_rows = self.result_proxy.fetchmany(self.batch_size)
         else:
             return None
-        col_set = [zip(self.col_names, x) for x in next_rows]
+        col_set = [zip(self.col_names, (encode_unicode(y) for y in x)) for x in next_rows]
         result = [self._apply_func_to_needed_columns(x) for x in [x for x in col_set]]
         return result
 

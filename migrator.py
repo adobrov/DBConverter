@@ -3,9 +3,12 @@ from sqlalchemy import select
 from sqlalchemy import create_engine
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.engine.reflection import Inspector
+from sqlalchemy.exc import IdentifierError
+from sqlalchemy.exc import DatabaseError
 
 from utils.processors import PostSelectDataProcessor, PreInsertDataProcessor
 from utils.mapper_type_functions import *
+from visitors import visit_prevent_long_name
 
 ALLOWED_MIGRATIONS = ['postgresql_to_oracle', 'postgresql_to_postgresql', 'oracle_to_oracle', 'oracle_to_postgresql']
 
@@ -16,7 +19,7 @@ class DBAdapter:
         self.dst_engine = dst_engine
         self.dst_inspector = Inspector.from_engine(dst_engine)
         self.src_metadata = MetaData(bind=self.src_engine, reflect=True)
-        self.dst_metadata = MetaData(bind=self.dst_engine, reflect=True)
+        self.dst_metadata = MetaData(bind=self.dst_engine)
         self.tables_for_copy = self.src_metadata.tables
 
     def make_create(self, tbl):
@@ -57,7 +60,16 @@ class BaseMigrator:
             else:
                 print 'Create table %s' % table[0]
                 tbl = self.db_adapter.make_create(table)
-                tbl.create()
+                try:
+                    tbl.create()
+                except IdentifierError, ie:
+                    print 'IdentifierError, skip this object'
+                    print ie
+                except DatabaseError, de:
+                    if 'INDEX' in de.__dict__['statement']:
+                        pass
+                    else:
+                        raise
         self.db_adapter.dst_metadata.reflect()
 
     def process_insert_data(self, batch_size):
@@ -112,9 +124,6 @@ class Migrator:
 if __name__ == '__main__':
     #dst = create_engine('engine://login:password@address:port/dbname')
     #src = create_engine('engine://login:password@address:port/dbname')
-    #dst = create_engine('oracle://naucrm2:naucrm@192.168.211.126:1521/naumendb')
-    dst = create_engine('oracle://naucrm2:naucrm@192.168.211.126:1521/naumendb')
-    src = create_engine('postgresql+psycopg2://naucrm:naucrm@localhost:5432/naumendb2')
     adapter = DBAdapter(src, dst)
     migrator = Migrator(adapter)
     print migrator.migration_type
