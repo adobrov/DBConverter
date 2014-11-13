@@ -1,3 +1,6 @@
+import os
+os.environ["NLS_LANG"] = ".UTF8"
+
 from sqlalchemy import MetaData
 from sqlalchemy import select
 from sqlalchemy import create_engine
@@ -9,6 +12,7 @@ from sqlalchemy.exc import DatabaseError
 from utils.processors import PostSelectDataProcessor, PreInsertDataProcessor
 from utils.mapper_type_functions import *
 from visitors import visit_prevent_long_name
+
 
 ALLOWED_MIGRATIONS = ['postgresql_to_oracle', 'postgresql_to_postgresql', 'oracle_to_oracle', 'oracle_to_postgresql']
 

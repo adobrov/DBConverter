@@ -1,6 +1,6 @@
 def encode_unicode(value):
     if isinstance(value, unicode):
-        return value.encode('utf-8')
+        return value
     return value
 
 
@@ -43,6 +43,7 @@ class PreInsertDataProcessor(BaseRowProcessor):
     def process_row(self):
         result_tuples = [self._apply_func_to_needed_columns(x) for x in [self.row]]
         result_list = [x[1] for x in result_tuples[0]]
+        print result_list
         return result_list
 
 

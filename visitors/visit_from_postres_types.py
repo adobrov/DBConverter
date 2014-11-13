@@ -33,7 +33,7 @@ def visit_from_postgres_types(element, compiler, **kw):
     elif isinstance(column.type, VARCHAR):
         clause = ''
         if not column.type.length:
-            clause = '%s VARCHAR(64)' % column.name
+            clause = '%s VARCHAR(4000)' % column.name
         else:
             clause = '%s %s' % (column.name, str(column.type),)
         if column.server_default:
